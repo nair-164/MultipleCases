@@ -1,0 +1,21 @@
+% Test Configuration
+%
+%
+
+
+Jacobian Type = 1;
+C or Cep      = 1;
+Drainage      = 1;
+IntScheme     = 1;
+TanType       = 1;
+
+
+% Tolerance Values
+
+
+AlawajiTol1   = 1.e-5;
+AlawajiTol2   = 1.e-5;
+AlawajiTol3   = 1.e-0;
+AlawajiTol4   = 1.e-0;
+Tol(Yield)    = 1.e-8;
+Tol(Newton)   = 1.e-8; 
