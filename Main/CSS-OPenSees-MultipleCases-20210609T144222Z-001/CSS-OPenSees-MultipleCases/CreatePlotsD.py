@@ -80,15 +80,15 @@ def createPlotsD():
 
     #plt.show()
 
-def createCombinedPlots():
+def createCombinedPlots(expDataFile='Dr67_100.txt', simDataFile='nCyclesResultD.dat', cols =3):
 
     # Read data
     # ---------
-    simDataFile = 'nCyclesResultD.dat'
+    # simDataFile = 'nCyclesResultD.dat'
     # simData = np.loadtxt(simDataFile, dtype=float,delimiter=',',usecols=(0, 1), skiprows = 1)
     simData = np.loadtxt(simDataFile, dtype=float,usecols=(0, 1))
 
-    expDataFile = 'Dr67_100.txt'
+    # expDataFile = 'Dr67_100.txt'
     expData = np.loadtxt(expDataFile,skiprows = 1)
 
     #Plot Results
@@ -101,11 +101,11 @@ def createCombinedPlots():
     
     axs[0].clear()
     axs[0].semilogx(simData[:,1], simData[:,0], marker = 'o', markersize = 8,  markerfacecolor='w', markeredgewidth=1.5, markeredgecolor='black', color='black', linestyle='solid', linewidth=1.25, label = 'Simulation')
-    axs[0].semilogx(expData[:,3], expData[:,0], marker = 'o', markersize = 8,  markerfacecolor='k', markeredgewidth=1.5, markeredgecolor='black', color='black', linestyle='solid', linewidth=1.25, label = 'Experiment')
+    axs[0].semilogx(expData[:,cols], expData[:,0], marker = 'o', markersize = 8,  markerfacecolor='k', markeredgewidth=1.5, markeredgecolor='black', color='black', linestyle='solid', linewidth=1.25, label = 'Experiment')
     axs[0].set_xlabel(r'# of cycles', fontsize=14)
     axs[0].set_ylabel(r'CSR', fontsize=14)
-    axs[0].set_xlim(5, 500)
-    axs[0].set_ylim(0.10, 0.17)
+    # axs[0].set_xlim(5, 500)
+    # axs[0].set_ylim(0.10, 0.17)
     axs[0].grid(color = 'blue', linestyle = '--', linewidth = 0.3)
     axs[0].legend()
 
